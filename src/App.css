@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700&family=JetBrains+Mono:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --black-theme:#050505;
+
+  --primary-theme-1:#fff; 
+  --primary-theme-2:#fafafa; 
+  --primary-theme-3:#f0f0f0;
+  --primary-theme-4:#e6e6e6;
+
+  --secondary-theme-1:#5257ff;
+  --secondary-theme-2:#3d43ff;
+  --secondary-theme-3:#292fff;
+  --secondary-theme-4:#141cff;
+
+  --box-shadow-1: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  --box-shadow-2: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;;
+  --box-shadow-3: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --box-shadow-4: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand",sans-serif;
+  color: var(--black-theme);
+}
