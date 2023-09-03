@@ -1,0 +1,23 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+}
+.logo {
+    display:flex;
+    align-items:center;
+}
+.logo img{
+    width:70px;
+}
+.logo .name {
+    font-size: 1.4rem;
+    margin-top: 22px;
+    letter-spacing: 1px;
+}
+.nav .link{
+    margin-top: 22px;
+    font-size: 2rem;
+}
