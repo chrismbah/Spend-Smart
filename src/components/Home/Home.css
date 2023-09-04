@@ -40,7 +40,24 @@
     border-radius: 0px;
 }
 .header-title .start-btn{
+    transition: var(--transition-1);
     width: 120px;
-    padding: 5px 0;
+    padding: 6px 2px;
     text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-theme-2);
+    background: var(--secondary-theme-2);
+    cursor: pointer;
+    font-size: .9rem;
+    letter-spacing: .5px;
+}
+.header-title .start-btn i{
+    color: var(--black-theme);
+    background: var(--secondary-theme-2);
+    font-size: 1.05rem;
+}
+.header-title .start-btn:hover{
+    background: var(--secondary-theme-3);
+   
 }
