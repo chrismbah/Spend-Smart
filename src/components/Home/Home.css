@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5% 0 7% 0;
+    padding-top: 5%;
     width: 85%;
-    margin: 0 auto;
+    margin: 0 auto ;
+    max-width: 1350px;
   
 }
 .header-img img {
@@ -12,7 +13,7 @@
 }
 
 .header-1 h1{
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     letter-spacing: 1.2px;
 }
 .header-1 .wisely{
@@ -24,24 +25,29 @@
 }
 .header-title p{
     margin-bottom: 10px;
+    font-size: .9rem;
 }
-.header-title .box{
-    padding: 10px 0;
-}
+
 .header-title input{
     width: 250px;
     padding: 5px;
-    border: 1px solid black;
-    border-color: var(--black-theme);
+    border: 1.5px solid black;
+    border-color: var(--black-theme-1);
     outline-color: black;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.header-title input::placeholder{
+    font-weight: 400;
+
 }
 .header-title .name-box:focus{
     outline-color: var(--secondary-theme-2);
-    border-radius: 0px;
 }
 .header-title .start-btn{
     transition: var(--transition-1);
-    width: 120px;
+    width: 130px;
     padding: 6px 2px;
     text-align: center;
     border: none;
@@ -53,11 +59,13 @@
     letter-spacing: .5px;
 }
 .header-title .start-btn i{
-    color: var(--black-theme);
-    background: var(--secondary-theme-2);
+    color: var(--black-theme-2);
+    background: none;
     font-size: 1.05rem;
 }
 .header-title .start-btn:hover{
     background: var(--secondary-theme-3);
-   
+} 
+.error{
+    color: red;
 }
