@@ -1,7 +1,34 @@
+import {useState,useEffect,useRef,FormEvent,ChangeEvent} from "react"
 import header from "../../assets/header.png"
 import "./Home.css"
+import { useGlobalContext } from "../../context/Context"
+import {useNavigate} from "react-router-dom"
+
 export default function Home() {
 
+  const navigate=useNavigate()
+  const inputRef=useRef<HTMLInputElement>(null)
+  const {setUsername,userName}=useGlobalContext()
+  const [errorMsg,setErrorMsg]=useState("")
+
+  function handleSubmit(e:FormEvent){
+    e.preventDefault()
+    if(!userName){
+      setErrorMsg("*Please fill out your name*")
+      return 
+    }
+    navigate("/start")
+  }
+  function handleChange(e:ChangeEvent<HTMLInputElement>){
+    setUsername(e.target.value)
+    setErrorMsg("")
+  }
+  
+  useEffect(() => {
+     if(inputRef.current){
+      inputRef.current.focus()
+     }
+  }, []);
   return (
     <div className="home">
       <div className="header-title">
@@ -12,13 +39,19 @@ export default function Home() {
           <p>Budgeting is the compass that guides us toward financial freedom. 
            <br /> Begin your journey today
           </p>
-        <form action=""  >
+        <form action="" onSubmit={handleSubmit}  >
           <div className="box">
-            <input type="text" placeholder="Enter name here..." className="name-box" />
+            <input type="text" placeholder="Enter name here..." 
+            value={userName} 
+            className="name-box"
+            ref={inputRef}
+             onChange={handleChange}/>
+            <p className="error">{errorMsg}</p>
           </div>
           <div className="start">
             <button className="start-btn">Start Now <i className="fa-solid fa-piggy-bank"></i></button>
-          </div>
+          </div> 
+         
         </form>
       </div> 
       <div className="header-img">
