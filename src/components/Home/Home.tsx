@@ -1,4 +1,7 @@
-import {useState,useEffect,useRef,FormEvent,ChangeEvent} from "react"
+import {useState,
+  // useEffect,
+  // useRef,
+  FormEvent,ChangeEvent} from "react"
 import header from "../../assets/header.png"
 import "./Home.css"
 import { useGlobalContext } from "../../context/Context"
@@ -7,7 +10,7 @@ import {useNavigate} from "react-router-dom"
 export default function Home() {
 
   const navigate=useNavigate()
-  const inputRef=useRef<HTMLInputElement>(null)
+  // const inputRef=useRef<HTMLInputElement>(null)
   const {setUsername,userName}=useGlobalContext()
   const [errorMsg,setErrorMsg]=useState("")
 
@@ -28,11 +31,11 @@ export default function Home() {
     setErrorMsg("") 
   }
   
-  useEffect(() => {
-     if(inputRef.current){
-      inputRef.current.focus()  //*Focuses on input box when page initially renders
-     }
-  }, []);
+  // useEffect(() => {
+  //    if(inputRef.current){
+  //     inputRef.current.focus()  //*Focuses on input box when page initially renders
+  //    }
+  // }, []);
   return (
     <div className="home">
       <div className="header-title">
@@ -48,13 +51,13 @@ export default function Home() {
             <input type="text" placeholder="Enter name here..." 
             value={userName} 
             className="name-box"
-            ref={inputRef}
+            // ref={inputRef}
              onChange={handleChange}/>
              <div className="error">
               <p>{errorMsg}</p>
              </div>
           </div>
-          <div className="start">
+          <div className="start-now">
             <button className="start-btn">Start Now <i className="fa-solid fa-piggy-bank"></i></button>
           </div> 
          
