@@ -1,4 +1,4 @@
-import {useState,createContext,useContext, useEffect} from 'react'
+import {useState,createContext,useContext} from 'react'
 import { BudgetProviderProps } from '../interface/Interfaces'
 
 export const BudgetContextApp=createContext<any>(null); //*Creating the context provider

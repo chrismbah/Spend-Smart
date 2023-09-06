@@ -20,17 +20,17 @@ export default function Home() {
     navigate("/start")
   }
   function handleChange(e:ChangeEvent<HTMLInputElement>){
-    const name=e.target.value
-    const nameParts=name.split(" ")
-    localStorage.setItem("firstname",nameParts[0])
-    setUsername(name)
-    setErrorMsg("")
-    console.log(userName)
+
+    const fullName=e.target.value //*Gets full name from user input
+    const nameParts=fullName.split(" ") //*Splits full name to collect first name
+    localStorage.setItem("firstname",nameParts[0]) //*Stores firstname in local storage
+    setUsername(fullName) //*Sets username as initial full name
+    setErrorMsg("") 
   }
   
   useEffect(() => {
      if(inputRef.current){
-      inputRef.current.focus()
+      inputRef.current.focus()  //*Focuses on input box when page initially renders
      }
   }, []);
   return (
