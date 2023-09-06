@@ -20,8 +20,12 @@ export default function Home() {
     navigate("/start")
   }
   function handleChange(e:ChangeEvent<HTMLInputElement>){
-    setUsername(e.target.value)
+    const name=e.target.value
+    const nameParts=name.split(" ")
+    localStorage.setItem("firstname",nameParts[0])
+    setUsername(name)
     setErrorMsg("")
+    console.log(userName)
   }
   
   useEffect(() => {
