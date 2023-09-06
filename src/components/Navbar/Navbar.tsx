@@ -15,7 +15,7 @@ export default function Navbar() {
         </div>
         <div className="link">
           <Link to={"https://github.com/chrismbah/Spend-Smart"}>
-            <i className="fa-brands fa-square-github"></i>
+            <i className='bx bx-moon'></i>
           </Link>
         </div>
     </div>
