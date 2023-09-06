@@ -1,4 +1,4 @@
-import {useState,createContext,useContext} from 'react'
+import {useState,createContext,useContext, useEffect} from 'react'
 import { BudgetProviderProps } from '../interface/Interfaces'
 
 export const BudgetContextApp=createContext<any>(null); //*Creating the context provider
@@ -12,7 +12,14 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   const [userName,setUsername]=useState<string>("")
   const [firstname,setFirstname]=useState<string>("")
 
-  const contextValue:any={userName,setUsername,firstname,setFirstname}
+  function updateUser(fullName:string):void{
+    setUsername(fullName)
+    const fullNameParts=fullName.split(" ")
+    setFirstname(fullNameParts[0])
+    localStorage.setItem("firstname",fullNameParts[0])
+  }
+ 
+  const contextValue:any={userName,setUsername,firstname,setFirstname,updateUser}
 
   return (
     <BudgetContextApp.Provider value={contextValue} >
