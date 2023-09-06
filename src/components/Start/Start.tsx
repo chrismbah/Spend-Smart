@@ -3,21 +3,27 @@ import { useGlobalContext } from "../../context/Context"
 import "./Start.css"
 export default function Start() { 
   
-  const {setFirstname,firstname,budgetAmount,setBudgetAmount,budgetName,setBudgetName}=useGlobalContext();
+  const {setFirstname,firstname,formData,setFormData}=useGlobalContext();
 
     useEffect(()=>{
       const storedName=localStorage.getItem("firstname") //*Gets first name stored in local storage
       setFirstname(storedName) //*Sets first name as the name stored in local storage
     },[])
 
-    function handleBudgetName(e:ChangeEvent<HTMLInputElement>):void{
-      setBudgetName(e.target.value)
-      console.log(budgetName)
+    // function handleBudgetName(e:ChangeEvent<HTMLInputElement>):void{
+    //   setBudgetName(e.target.value)
+    //   console.log(budgetName)
+    // }
+    // function handleBudgetAmount(e:ChangeEvent<HTMLInputElement>):void{
+    //   setBudgetAmount(e.target.value)
+    //   console.log(budgetAmount)
+    // }
+    function handleChange(e:ChangeEvent<HTMLInputElement>){
+      const {name,value}=e.target
+      setFormData({...formData,[name]:value})
+     
     }
-    function handleBudgetAmount(e:ChangeEvent<HTMLInputElement>):void{
-      setBudgetAmount(e.target.value)
-      console.log(budgetAmount)
-    }
+
     function handleSubmit(e:FormEvent){
       e.preventDefault()
       console.log("hello")
@@ -39,11 +45,12 @@ export default function Start() {
           <div className="budget-name">
             <label htmlFor="budgetName">Budget Name</label>
             <input type="text"
-            id="budgetName" 
+            id="name" 
+            name="name"
             placeholder="e.g. Groceries" 
             required
             title="Please fill out this field"
-            onChange={handleBudgetName}
+            onChange={handleChange}
             /> 
            
           </div>
@@ -51,10 +58,11 @@ export default function Start() {
             <label htmlFor="amount">Amount</label>
             <input type="number"
             id="amount" 
+            name="amount"
             placeholder="e.g. $500"
             required
             title="Please fill out this field"
-            onChange={handleBudgetAmount}
+            onChange={handleChange}
              />
           </div>
         
