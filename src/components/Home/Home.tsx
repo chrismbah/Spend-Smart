@@ -46,7 +46,9 @@ export default function Home() {
             className="name-box"
             ref={inputRef}
              onChange={handleChange}/>
-            <p className="error">{errorMsg}</p>
+             <div className="error">
+              <p>{errorMsg}</p>
+             </div>
           </div>
           <div className="start">
             <button className="start-btn">Start Now <i className="fa-solid fa-piggy-bank"></i></button>

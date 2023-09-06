@@ -66,6 +66,7 @@
 .header-title .start-btn:hover{
     background: var(--secondary-theme-3);
 } 
-.error{
+.error p{
+    font-size: .7rem;
     color: red;
 }
