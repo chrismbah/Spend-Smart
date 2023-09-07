@@ -24,7 +24,7 @@
     color: var(--secondary-theme-2);
 }
 .header-title p{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 1rem;
 }
 .header-title .box{
@@ -32,9 +32,9 @@
 }
 
 .header-title input{
-    width: 250px;
-    height: 40px;
-    padding: 1px;
+    width: 280px;
+    height: 39px;
+    padding: 1px 3px;
     border: 3px solid ;
     border-color: var(--secondary-theme-2);
     font-size: .95rem;
@@ -68,7 +68,7 @@
     font-size: 1.05rem;
 }
 .header-title .start-btn:hover{
-    background: var(--secondary-theme-3);
+    background: var(--secondary-theme-2a);
 } 
 .error p{
     font-size: .7rem;
