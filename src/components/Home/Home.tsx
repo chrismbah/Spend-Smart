@@ -4,14 +4,14 @@ import {useState,
   FormEvent,ChangeEvent} from "react"
 import header from "../../assets/header.png"
 import "./Home.css"
-import { useGlobalContext } from "../../context/Context"
+import { useBudgetContext } from "../../context/Context"
 import {useNavigate} from "react-router-dom"
 
 export default function Home() {
 
   const navigate=useNavigate()
   // const inputRef=useRef<HTMLInputElement>(null)
-  const {setUsername,userName}=useGlobalContext()
+  const {setUsername,userName}=useBudgetContext()
   const [errorMsg,setErrorMsg]=useState("")
 
   function handleSubmit(e:FormEvent){

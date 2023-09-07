@@ -3,7 +3,7 @@ import { BudgetProviderProps,FormDataProps } from '../interface/Interfaces'
 
 export const BudgetContextApp=createContext<any>(null); //*Creating the context provider
 
-export function useGlobalContext(){   //*Function for getting data from context provider
+export function useBudgetContext(){   //*Function for getting data from context provider
   return useContext(BudgetContextApp)
 }
 

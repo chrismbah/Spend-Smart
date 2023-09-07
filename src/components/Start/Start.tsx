@@ -1,11 +1,11 @@
 import {ChangeEvent, useEffect,FormEvent,useRef,KeyboardEvent} from "react"
-import { useGlobalContext } from "../../context/Context"
+import { useBudgetContext } from "../../context/Context"
 import "./Start.css"
 import { useNavigate } from "react-router-dom";
 
 export default function Start() { 
   
-  const {setFirstname,firstname,formData,setFormData}=useGlobalContext();
+  const {setFirstname,firstname,formData,setFormData}=useBudgetContext();
   const amountInputRef=useRef(null)
   const navigate =useNavigate()
 
@@ -27,12 +27,14 @@ export default function Start() {
 
     function handleChange(e:ChangeEvent<HTMLInputElement>):void{
       const {name,value}=e.target
-      setFormData({...formData,[name]:value})
         if(name==="name"){
           localStorage.setItem("budget-name",value)
+          setFormData({...formData,[name]:value})
           return 
         }
         localStorage.setItem("budget-amount",value)
+        setFormData({...formData,[name]:value})
+
     }
 
     function getStoredValue(name:string){
