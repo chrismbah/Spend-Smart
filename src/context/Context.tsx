@@ -1,5 +1,5 @@
 import {useState,createContext,useContext} from 'react'
-import { BudgetProviderProps } from '../interface/Interfaces'
+import { BudgetProviderProps,FormDataProps } from '../interface/Interfaces'
 
 export const BudgetContextApp=createContext<any>(null); //*Creating the context provider
 
@@ -11,12 +11,10 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   
   const [userName,setUsername]=useState<string>("")
   const [firstname,setFirstname]=useState<string>("")
-  const [formData,setFormData]=useState({
+  const [formData,setFormData]=useState<FormDataProps>({
     name:"",
     amount:""
   })
-  // const [budgetName,setBudgetName]=useState<string>("")
-  // const [budgetAmount,setBudgetAmount]=useState<number>(0)
  
   const contextValue:any={
     userName,
@@ -25,10 +23,6 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     setFirstname,
     formData,
     setFormData
-    // budgetAmount,
-    // setBudgetAmount,
-    // budgetName,
-    // setBudgetName
   }
 
   return (
