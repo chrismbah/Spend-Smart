@@ -4,10 +4,12 @@
   --black-theme-1:#050505;
   --black-theme-2:#2b2929;
 
-  --primary-theme-1:#fff; 
+  /* --primary-theme-1:#fff;  */
+  --primary-theme-1:#fcfcfc; 
   --primary-theme-2:#fafafa; 
   --primary-theme-3:#f0f0f0;
   --primary-theme-4:#e6e6e6;
+  --primary-theme-5:#e9e9e9;
 
   --secondary-theme-1:#5257ff;
   --secondary-theme-2:#3d43ff;
