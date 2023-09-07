@@ -1,32 +1,53 @@
-import {ChangeEvent, useEffect,FormEvent} from "react"
+import {ChangeEvent, useEffect,FormEvent,useRef,KeyboardEvent} from "react"
 import { useGlobalContext } from "../../context/Context"
 import "./Start.css"
+import { useNavigate } from "react-router-dom";
+
 export default function Start() { 
   
   const {setFirstname,firstname,formData,setFormData}=useGlobalContext();
+  const amountInputRef=useRef(null)
+  const navigate =useNavigate()
 
     useEffect(()=>{
       const storedName=localStorage.getItem("firstname") //*Gets first name stored in local storage
       setFirstname(storedName) //*Sets first name as the name stored in local storage
     },[])
 
-    // function handleBudgetName(e:ChangeEvent<HTMLInputElement>):void{
-    //   setBudgetName(e.target.value)
-    //   console.log(budgetName)
-    // }
-    // function handleBudgetAmount(e:ChangeEvent<HTMLInputElement>):void{
-    //   setBudgetAmount(e.target.value)
-    //   console.log(budgetAmount)
-    // }
-    function handleChange(e:ChangeEvent<HTMLInputElement>){
+    function handleInputEnter(e: KeyboardEvent<HTMLInputElement>
+      ,ref: React.RefObject<HTMLInputElement | null>){
+
+      if(e.key==="Enter"){
+        e.preventDefault();
+       if(ref.current){
+        ref.current.focus()
+       }
+      }
+    }
+
+    function handleChange(e:ChangeEvent<HTMLInputElement>):void{
       const {name,value}=e.target
       setFormData({...formData,[name]:value})
-     
+        if(name==="name"){
+          localStorage.setItem("budget-name",value)
+          return 
+        }
+        localStorage.setItem("budget-amount",value)
+    }
+
+    function getStoredValue(name:string){
+      
+        const storedValue=localStorage.getItem(name)
+        if(storedValue){
+          return storedValue
+        }
+        return ""
     }
 
     function handleSubmit(e:FormEvent){
       e.preventDefault()
-      console.log("hello")
+      navigate("/budget")
+      
     }
    
   return (
@@ -40,32 +61,37 @@ export default function Start() {
         </div>
       </div>
       <div className="start-box">
-        <h3>Create Budget</h3>
+        <h3>Your Budget</h3>
         <form action="" onSubmit={handleSubmit}>
           <div className="budget-name">
             <label htmlFor="budgetName">Budget Name</label>
             <input type="text"
-            id="name" 
-            name="name"
-            placeholder="e.g. Groceries" 
-            required
-            title="Please fill out this field"
-            onChange={handleChange}
+              id="name" 
+              name="name"
+              placeholder="e.g. Groceries" 
+              required
+              title="Budget Name"
+              value={getStoredValue("budget-name")}
+              // value={formData.name}
+              onChange={handleChange}
+              onKeyPress={(e)=>handleInputEnter(e,amountInputRef)}
             /> 
-           
           </div>
-          <div className="amount">
+          <div className="budget-amount">
             <label htmlFor="amount">Amount</label>
             <input type="number"
-            id="amount" 
-            name="amount"
-            placeholder="e.g. $500"
-            required
-            title="Please fill out this field"
-            onChange={handleChange}
+              id="amount" 
+              name="amount"
+              placeholder="e.g. $500"
+              required
+              title="Budget Amount"
+              value={getStoredValue("budget-amount")}
+              // value={formData.amount}
+              onChange={handleChange}
+              ref={amountInputRef}
              />
           </div>
-        
+          <button className="create-btn"> Create <i className='bx bxs-plus-circle'></i></button>
         </form>
       </div>
     </div>
