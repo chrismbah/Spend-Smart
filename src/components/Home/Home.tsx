@@ -22,6 +22,7 @@ export default function Home() {
     }
     navigate("/start")
   }
+  
   function handleChange(e:ChangeEvent<HTMLInputElement>){
 
     const fullName=e.target.value //*Gets full name from user input

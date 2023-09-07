@@ -25,17 +25,20 @@
 }
 .header-title p{
     margin-bottom: 10px;
-    font-size: .9rem;
+    font-size: 1rem;
+}
+.header-title .box{
+    margin-bottom: 30px;
 }
 
 .header-title input{
     width: 250px;
-    padding: 5px;
+    height: 40px;
+    padding: 1px;
     border: 3px solid ;
-    /* border-color: var(--black-theme-1); */
     border-color: var(--secondary-theme-2);
-    font-size: .9rem;
-    font-weight: 500;   
+    font-size: .95rem;
+    font-weight: 520;   
     border-radius: 5px;
 }
 
@@ -44,13 +47,12 @@
 
 }
 .header-title .name-box:focus{
-    /* outline-color: var(--secondary-theme-2); */
     outline: none;
 }
 .header-title .start-btn{
     transition: var(--transition-1);
     width: 130px;
-    padding: 6px 2px;
+    padding: 8px 2px;
     text-align: center;
     border: none;
     border-radius: 5px;
