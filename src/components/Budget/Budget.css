@@ -21,6 +21,10 @@
     width: 95%;
     margin: 0 auto 10px;
 }
+/* .overview-box{
+    width: 300px;
+    margin: 0 0 10px 30px;
+} */
 .overview .overview-info{
     display: flex;
     align-items: center;
