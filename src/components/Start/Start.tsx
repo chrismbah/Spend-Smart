@@ -2,10 +2,11 @@ import {ChangeEvent, useEffect,FormEvent,useRef,KeyboardEvent} from "react"
 import { useBudgetContext } from "../../context/Context"
 import "./Start.css"
 import { useNavigate } from "react-router-dom";
+import Create from "../../icons/Create";
 
 export default function Start() { 
   
-  const {setFirstname,firstname,formData,setFormData}=useBudgetContext();
+  const {setFirstname,firstname,formData,setFormData}=useBudgetContext(); //*Gets info from context api
   const amountInputRef=useRef(null)
   const navigate =useNavigate()
 
@@ -74,7 +75,6 @@ export default function Start() {
               required
               title="Budget Name"
               value={getStoredValue("budget-name")}
-              // value={formData.name}
               onChange={handleChange}
               onKeyPress={(e)=>handleInputEnter(e,amountInputRef)}
             /> 
@@ -88,12 +88,11 @@ export default function Start() {
               required
               title="Budget Amount"
               value={getStoredValue("budget-amount")}
-              // value={formData.amount}
               onChange={handleChange}
               ref={amountInputRef}
              />
           </div>
-          <button className="create-btn"> Create <i className='bx bxs-plus-circle'></i></button>
+          <button className="create-btn"> Create <Create /></button>
         </form>
       </div>
     </div>

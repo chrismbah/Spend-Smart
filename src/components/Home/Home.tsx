@@ -6,6 +6,7 @@ import header from "../../assets/header.png"
 import "./Home.css"
 import { useBudgetContext } from "../../context/Context"
 import {useNavigate} from "react-router-dom"
+import Piggy from "../../icons/Piggy"
 
 export default function Home() {
 
@@ -59,7 +60,7 @@ export default function Home() {
              </div>
           </div>
           <div className="start-now">
-            <button className="start-btn">Start Now <i className="fa-solid fa-piggy-bank"></i></button>
+            <button className="start-btn">Start Now <Piggy /></button>
           </div> 
          
         </form>

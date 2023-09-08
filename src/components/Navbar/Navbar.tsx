@@ -1,6 +1,7 @@
 import logo from "../../assets/logo.svg"
 import "./Nav.css"
 import {Link} from "react-router-dom"
+import Moon from "../../icons/Moon"
 
 export default function Navbar() {
   return (
@@ -15,7 +16,7 @@ export default function Navbar() {
         </div>
         <div className="link">
           <Link to={"https://github.com/chrismbah/Spend-Smart"}>
-            <i className='bx bx-moon'></i>
+            <Moon />
           </Link>
         </div>
     </div>
