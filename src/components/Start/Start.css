@@ -69,6 +69,7 @@
     font-size: 1.05rem;
     border-radius: 5px;
     background: var(--primary-theme-1);
+    border: 2px solid black;
 }
 .start-box input:focus{
    outline: solid 2.5px var(--secondary-theme-1) ;
