@@ -28,15 +28,14 @@ export default function Start() {
     }
 
     function handleChange(e:ChangeEvent<HTMLInputElement>):void{
-      const {name,value}=e.target //*Gets name and value form input element
+      const {name,value}=e.target //*Gets name and value from input element
         if(name==="name"){
-          localStorage.setItem("budget-name",value) //*If input name is "name" store value as budget-name
+          localStorage.setItem("budget-name",value) //*If input name is "name" store value as "budget-name"
           setFormData({...formData,[name]:value})
           return 
         }
-        localStorage.setItem("budget-amount",value) //*Else store the value as budget-amount
+        localStorage.setItem("budget-amount",value) //*Else store the value as "budget-amount"
         setFormData({...formData,[name]:value})
-
     }
 
     function getStoredValue(name:string){
