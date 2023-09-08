@@ -6,7 +6,7 @@ import Create from "../../icons/Create";
 
 export default function Start() { 
   
-  const {setFirstname,firstname,formData,setFormData}=useBudgetContext(); //*Gets info from context api
+  const {setFirstname,firstname,formData,setFormData}=useBudgetContext(); //*Getting info from context api
   const amountInputRef=useRef(null)
   const navigate =useNavigate()
 
@@ -15,25 +15,26 @@ export default function Start() {
       setFirstname(storedName) //*Sets first name as the name stored in local storage
     },[])
 
-    function handleInputEnter(e: KeyboardEvent<HTMLInputElement>
-      ,ref: React.RefObject<HTMLInputElement | null>){
+    function handleInputEnter(e: KeyboardEvent<HTMLInputElement> 
+      ,ref: React.RefObject<HTMLInputElement | null>){ 
 
       if(e.key==="Enter"){
         e.preventDefault();
        if(ref.current){
         ref.current.focus()
-       }
+      //*Changes to the next input box on clicking "enter"
+       }   
       }
     }
 
     function handleChange(e:ChangeEvent<HTMLInputElement>):void{
-      const {name,value}=e.target
+      const {name,value}=e.target //*Gets name and value form input element
         if(name==="name"){
-          localStorage.setItem("budget-name",value)
+          localStorage.setItem("budget-name",value) //*If input name is "name" store value as budget-name
           setFormData({...formData,[name]:value})
           return 
         }
-        localStorage.setItem("budget-amount",value)
+        localStorage.setItem("budget-amount",value) //*Else store the value as budget-amount
         setFormData({...formData,[name]:value})
 
     }
@@ -49,7 +50,7 @@ export default function Start() {
 
     function handleSubmit(e:FormEvent){
       e.preventDefault()
-      navigate("/budget")
+      navigate("/budget") //*Navigates to budget component
       
     }
    
