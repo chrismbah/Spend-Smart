@@ -75,7 +75,6 @@
 .start-box .create-btn{
     background: var(--secondary-theme-4);
     color: var(--primary-theme-5);
-    /* width: 18%; */
     padding:7px;
     border: none;
     border-radius: 7px;

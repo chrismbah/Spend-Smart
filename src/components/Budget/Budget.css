@@ -1,0 +1,64 @@
+.budget{
+    width: 85%;
+    margin: 0 auto ;
+    max-width: 1350px;
+    margin-top: 30px;
+}
+.budget .overview-title{
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+.budget .overview-title span{
+    color: var(--secondary-theme-2);
+}
+ .overview{
+    box-shadow: var(--box-shadow-2);
+    padding: 10px ;
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
+}
+.overview .overview-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 480;
+    font-family: "Bricolage Grotesque";
+}
+.overview-info .name{
+    font-family: "Bricolage Grotesque";
+    font-size: 1.6rem;
+}
+.overview-info .amount{
+    font-family: "Bricolage Grotesque";
+    font-size: 1.5rem;
+}
+.overview .clear-btn{
+    text-align: center;
+}
+.overview .clear-btn button{
+    transition: var(--transition-1);
+    width: 100px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid var(--red-1);
+    cursor: pointer;
+    color: var(--black-theme-2);
+    padding: 3px 0;
+}
+.overview .clear-btn i{
+    transition: var(--transition-1);
+    color: var(--red-1);
+    font-size: 1.2rem;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    background: none;
+}
+.overview .clear-btn button:hover{
+    background-color: var(--red-1);
+}
+.overview .clear-btn button:hover i{
+    color: var(--black-theme-2);
+}
