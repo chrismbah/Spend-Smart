@@ -87,19 +87,19 @@
 .new-expense .info label{
     display: block;
     margin-bottom: 5px;
-    font-size: 1.1rem;
+    font-size: 1.12rem;
 
 }
 .new-expense .info input{
     width: 250px;
     border-radius:5px ;
     padding:  3px;
-    border: 2px solid black;
+    border: none;
     font-size: 1.02rem;
+    outline: 2px solid black;
 }
 .new-expense .info input:focus{
-    /* outline:  solid 2px var(--secondary-theme-2); */
-    border: 2px solid var(--secondary-theme-2);
+    outline: 2px solid var(--secondary-theme-2);
 }
 .new-expense .add {
     text-align: center;
