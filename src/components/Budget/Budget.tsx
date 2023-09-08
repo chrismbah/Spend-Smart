@@ -2,7 +2,7 @@
 // import { useBudgetContext } from '../../context/Context'
 import "./Budget.css"
 import Trash from "../../icons/Trash"
-
+import Add from "../../icons/Add"
 
 export default function Budget() {
 
@@ -27,7 +27,7 @@ export default function Budget() {
           <div className="progress-bar"></div>
         </div>
         <div className="clear-btn">
-          <button className="clear">Clear <Trash /></button>
+          <button className="btn clear">Clear <Trash /></button>
         </div>
       </div>
       <div className="overview new-expense">
@@ -36,18 +36,17 @@ export default function Budget() {
         </div>
         <form action="">
           <div className="info">
-          <div className="name">
-            <label htmlFor="name">Expense Name</label> <br /> 
-            <input type="text" />
+            <div className="name">
+              <label>Expense Name:</label>
+              <input type="text" />
+            </div>
+            <div className="amount">
+              <label >Expense Amount:</label>
+              <input type="number" />
+            </div>
           </div>
-          <div className="amount">
-            <label htmlFor="amount">Expense Amount</label> <br />
-            <input type="text" />
-          </div>
-          </div>
-        
           <div className="add">
-            <button>Add</button>
+            <button className="add-btn">Add <Add /></button>
           </div>
         </form>
       </div>
