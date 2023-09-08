@@ -3,6 +3,7 @@
     margin: 0 auto ;
     max-width: 1350px;
     margin-top: 30px;
+    padding-left: 10px;
 }
 .budget .overview-title{
     font-size: 2rem;
@@ -15,10 +16,10 @@
 }
  .overview{
     box-shadow: var(--box-shadow-2);
-    padding: 10px ;
+    padding: 10px 10px 15px 10px ;
     border-radius: 10px;
     width: 95%;
-    margin: auto;
+    margin: 0 auto 10px;
 }
 .overview .overview-info{
     display: flex;
@@ -34,6 +35,7 @@
 .overview-info .amount{
     font-family: "Bricolage Grotesque";
     font-size: 1.5rem;
+    font-weight: 600;
 }
 .overview .clear-btn{
     text-align: center;
@@ -47,6 +49,7 @@
     cursor: pointer;
     color: var(--black-theme-2);
     padding: 3px 0;
+    font-weight: 400;
 }
 .overview .clear-btn i{
     transition: var(--transition-1);
@@ -58,7 +61,21 @@
 }
 .overview .clear-btn button:hover{
     background-color: var(--red-1);
+    color: var(--primary-theme-2);
 }
 .overview .clear-btn button:hover i{
     color: var(--black-theme-2);
+    color: var(--primary-theme-2);
+}
+.new-expense .title{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.new-expense .title span{
+    color: var(--secondary-theme-2);
+}
+.new-expense .info{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
 }

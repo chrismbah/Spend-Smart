@@ -30,6 +30,27 @@ export default function Budget() {
           <button className="clear">Clear <Trash /></button>
         </div>
       </div>
+      <div className="overview new-expense">
+        <div className="title">
+          Add New <span>{budgetName}</span> Expense
+        </div>
+        <form action="">
+          <div className="info">
+          <div className="name">
+            <label htmlFor="name">Expense Name</label> <br /> 
+            <input type="text" />
+          </div>
+          <div className="amount">
+            <label htmlFor="amount">Expense Amount</label> <br />
+            <input type="text" />
+          </div>
+          </div>
+        
+          <div className="add">
+            <button>Add</button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
