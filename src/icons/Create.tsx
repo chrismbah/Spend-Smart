@@ -1,5 +1,5 @@
 export default function Create() {
   return (
-    <i className='bx bxs-plus-circle'></i>
+    <i className='bx bxs-book-add'></i>
   )
 }
