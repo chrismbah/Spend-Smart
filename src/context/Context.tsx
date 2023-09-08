@@ -13,7 +13,7 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   const [firstname,setFirstname]=useState<string>("")
   const [formData,setFormData]=useState<FormDataProps>({
     name:"",
-    amount:""
+    amount:0
   })
  
   const contextValue:any={

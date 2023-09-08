@@ -5,5 +5,6 @@ export interface BudgetProviderProps{
 }
 export interface FormDataProps{
     name:"";
-    amount:number|string
+    amount:number;
+    // amount:number|string
 }
