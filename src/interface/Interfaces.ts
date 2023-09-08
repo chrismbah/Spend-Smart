@@ -8,3 +8,9 @@ export interface FormDataProps{
     amount:number;
     // amount:number|string
 }
+export interface ExpenseListProps{
+    id:number
+    name:""
+    amount:number
+    
+}
