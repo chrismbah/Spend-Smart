@@ -1,5 +1,5 @@
 // import React,{useEffect} from 'react'
-// import { useBudgetContext } from '../../context/Context'
+import { useBudgetContext } from '../../context/Context'
 import "./Budget.css"
 import Trash from "../../icons/Trash"
 import Add from "../../icons/Add"
@@ -8,13 +8,16 @@ export default function Budget() {
 
     const budgetName=localStorage.getItem("budget-name")
     const budgetAmount=localStorage.getItem("budget-amount")
+    const {handleExpenseChange,handleExpenseSubmit,name,setName,amount,setAmount}=useBudgetContext()
+
+    
 
   return (
     <div className="budget">
       <div className="overview-title">
        <span>{budgetName}</span> Overview
       </div>
-      <div className="overview">
+      <div className="overview overview-box">
         <div className="overview-info">
           <div className="name">
             {budgetName}
@@ -34,15 +37,25 @@ export default function Budget() {
         <div className="title">
           Add New <span>{budgetName}</span> Expense
         </div>
-        <form action="">
+        <form action="" onSubmit={handleExpenseSubmit}>
           <div className="info">
             <div className="name">
               <label>Expense Name:</label>
-              <input type="text" />
+              <input type="text" 
+                id="name"
+                required 
+                placeholder="e.g. Cereals"
+                value={name} 
+                onChange={handleExpenseChange}/>
             </div>
             <div className="amount">
               <label >Expense Amount:</label>
-              <input type="number" />
+              <input type="number"
+                id="number"
+                required
+                placeholder="e.g. $50"
+                value={amount}
+                onChange={handleExpenseChange} />
             </div>
           </div>
           <div className="add">
