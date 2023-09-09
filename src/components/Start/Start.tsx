@@ -1,4 +1,4 @@
-import {ChangeEvent, useEffect,FormEvent,useRef,KeyboardEvent} from "react"
+import { ChangeEvent, useEffect,FormEvent,useRef,KeyboardEvent } from "react"
 import { useBudgetContext } from "../../context/Context"
 import "./Start.css"
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import Create from "../../icons/Create";
 
 export default function Start() { 
   
-  const {setFirstname,firstname,formData,setFormData}=useBudgetContext(); //*Getting info from context api
+  const { setFirstname,firstname,formData,setFormData}=useBudgetContext(); //*Getting info from context api
   const amountInputRef=useRef(null)
   const navigate =useNavigate()
 
@@ -95,6 +95,6 @@ export default function Start() {
           <button className="create-btn"> Create <Create /></button>
         </form>
       </div>
-    </div>
+    </div>   
   )
 }
