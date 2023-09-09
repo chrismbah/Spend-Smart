@@ -1,5 +1,6 @@
 import {useState,createContext,useContext, ChangeEvent,FormEvent} from 'react'
 import { BudgetProviderProps,FormDataProps,ExpenseListProps } from '../interface/Interfaces'
+import { v4 as uuid } from "uuid";
 
 export const BudgetContextApp=createContext<any>(null); //*Creating the context provider
 
@@ -17,7 +18,7 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   })
   const [name,setName]=useState<string>("")
   const [amount,setAmount]=useState<number|string>("")
-  const [expenseList,setExpenseList]=useState<ExpenseListProps[]|null>([])
+  const [expenseList,setExpenseList]=useState<ExpenseListProps[]>([])
 
   function handleExpenseChange(e:ChangeEvent<HTMLInputElement>){
     const {value,id}=e.target
@@ -25,15 +26,22 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
       setName(value)
     }
     else{
-      setAmount(Number(value))
+      setAmount(value)
     }
     console.log(name+amount)
   }
   function handleExpenseSubmit(e:FormEvent):void{
     e.preventDefault();
+    const newExpense={
+      name:name,
+      amount:amount,
+      id:uuid(),
+    }
+    setExpenseList([...expenseList,newExpense])
     setName("")
     setAmount("")
     console.log("Submitted")
+    console.log(expenseList)
   }
  
   const contextValue:any={
