@@ -5,12 +5,10 @@ export interface BudgetProviderProps{
 }
 export interface FormDataProps{
     name:"";
-    amount:number;
-    // amount:number|string
+    amount:number|string;
 }
 export interface ExpenseListProps{
-    id:number
-    name:""
-    amount:number
-    
+    name:string
+    amount:number|string
+    id:string
 }

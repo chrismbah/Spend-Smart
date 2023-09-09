@@ -15,14 +15,14 @@ export default function Start() {
       setFirstname(storedName) //*Sets first name as the name stored in local storage
     },[])
 
-    function handleInputEnter(e: KeyboardEvent<HTMLInputElement> 
+    function handleInputEnter(e: KeyboardEvent<HTMLInputElement>  //*Takes in keyboard event and ref
       ,ref: React.RefObject<HTMLInputElement | null>){ 
 
-      if(e.key==="Enter"){
+      if(e.key==="Enter"){   
         e.preventDefault();
        if(ref.current){
         ref.current.focus()
-      //*Changes to the next input box on clicking "enter"
+        //*If enter key is clicked it changes to the next input box
        }   
       }
     }

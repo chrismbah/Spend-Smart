@@ -1,16 +1,30 @@
-// import React,{useEffect} from 'react'
+import {useRef,KeyboardEvent} from 'react'
 import { useBudgetContext } from '../../context/Context'
 import "./Budget.css"
 import Trash from "../../icons/Trash"
 import Add from "../../icons/Add"
+import Expenses from '../Expenses'
 
 export default function Budget() {
 
     const budgetName=localStorage.getItem("budget-name")
     const budgetAmount=localStorage.getItem("budget-amount")
-    const {handleExpenseChange,handleExpenseSubmit,name,setName,amount,setAmount}=useBudgetContext()
+    const {handleExpenseChange,handleExpenseSubmit,name,amount,expenseList}=useBudgetContext()
 
-    
+    const amountInputRef=useRef(null)
+
+  
+    function handleInputEnter(e: KeyboardEvent<HTMLInputElement> 
+      ,ref: React.RefObject<HTMLInputElement | null>){ 
+      if(e.key==="Enter"){
+        e.preventDefault();
+       if(ref.current){
+        ref.current.focus()
+      //*Changes to the next input box on clicking "enter"
+       }   
+      }
+    }
+
 
   return (
     <div className="budget">
@@ -46,6 +60,7 @@ export default function Budget() {
                 required 
                 placeholder="e.g. Cereals"
                 value={name} 
+                onKeyPress={(e)=>{handleInputEnter(e,amountInputRef)}}
                 onChange={handleExpenseChange}/>
             </div>
             <div className="amount">
@@ -55,6 +70,7 @@ export default function Budget() {
                 required
                 placeholder="e.g. $50"
                 value={amount}
+                ref={amountInputRef}
                 onChange={handleExpenseChange} />
             </div>
           </div>
@@ -63,6 +79,7 @@ export default function Budget() {
           </div>
         </form>
       </div>
+      {expenseList.length >0 && <Expenses/>}
     </div>
   )
 }
