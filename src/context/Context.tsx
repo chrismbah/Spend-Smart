@@ -43,7 +43,16 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     console.log("Submitted")
     console.log(expenseList)
   }
- 
+  function handleClear(){
+    setExpenseList([])
+  }
+  function handleDelete(id:string){
+    const newExpenseList=expenseList.filter((expense)=>{
+      expense.id!==id
+    })
+    setExpenseList(newExpenseList)
+  }
+
   const contextValue:any={
     userName,
     setUsername,
@@ -51,7 +60,9 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     setFirstname,
     formData,
     setFormData,
-    name,setName,amount,setAmount,expenseList,setExpenseList,handleExpenseChange,handleExpenseSubmit
+    name,setName,amount,setAmount,expenseList,setExpenseList,handleExpenseChange,handleExpenseSubmit,
+    handleClear,
+    handleDelete
   }
 
   return (
