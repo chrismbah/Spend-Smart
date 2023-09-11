@@ -13,10 +13,12 @@
   --secondary-theme-1:#5257ff;
   --secondary-theme-2:#3d43ff;
   --secondary-theme-2a:#4147fd;
+  --secondary-theme-2b:#3d43ff93;
   --secondary-theme-3:#292fff;
   --secondary-theme-4:#141cff;
 
   --red-1:#ff1a1a;
+  --green-1:rgb(3, 170, 3);
 
   --box-shadow-1: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --box-shadow-2: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;;
