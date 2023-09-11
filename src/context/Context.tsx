@@ -1,4 +1,4 @@
-import {useState,createContext,useContext, ChangeEvent,FormEvent} from 'react'
+import {useState,createContext,useContext, ChangeEvent,FormEvent,KeyboardEvent} from 'react'
 import { BudgetProviderProps,FormDataProps,ExpenseListProps } from '../interface/Interfaces'
 import { v4 as uuid } from "uuid";
 
@@ -19,6 +19,19 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   const [name,setName]=useState<string>("")
   const [amount,setAmount]=useState<number|string>("")
   const [expenseList,setExpenseList]=useState<ExpenseListProps[]>([])
+  const [edit,setEdit]=useState<boolean>(false)
+  const [editId,setEditId]=useState<number|string>(0)
+
+  function handleInputEnter(e: KeyboardEvent<HTMLInputElement> 
+    ,ref: React.RefObject<HTMLInputElement | null>){ 
+    if(e.key==="Enter"){
+      e.preventDefault();
+     if(ref.current){
+      ref.current.focus()
+    //*Changes to the next input box on clicking "enter"
+     }   
+    }
+  }
 
   function handleExpenseChange(e:ChangeEvent<HTMLInputElement>){
     const {value,id}=e.target
@@ -28,10 +41,19 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     else{
       setAmount(value)
     }
-    console.log(name+amount)
   }
   function handleExpenseSubmit(e:FormEvent):void{
     e.preventDefault();
+    if(edit){
+     let updatedExpenseList:ExpenseListProps[]= expenseList.map((expense)=>{
+        return expense.id === editId ? {...expense,name:name,amount:amount} : expense
+      })
+      setExpenseList(updatedExpenseList)
+      setEdit(false)
+      setName("")
+      setAmount("")
+    }
+   else{ 
     const newExpense={
       name:name,
       amount:amount,
@@ -40,17 +62,31 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     setExpenseList([...expenseList,newExpense])
     setName("")
     setAmount("")
-    console.log("Submitted")
-    console.log(expenseList)
+   }
   }
+
   function handleClear(){
     setExpenseList([])
   }
+
   function handleDelete(id:string){
     const newExpenseList=expenseList.filter((expense)=>{
-      expense.id!==id
+      return expense.id!==id
     })
     setExpenseList(newExpenseList)
+  }
+
+  function handleEdit(id:string){
+    const editingExpense:ExpenseListProps|undefined= expenseList.find((expense)=>{
+      return expense.id===id
+    })
+    if(editingExpense){
+      const {name,amount}=editingExpense
+      setName(name)
+      setAmount(amount)
+      setEdit(true)
+      setEditId(id)
+    }
   }
 
   const contextValue:any={
@@ -62,7 +98,9 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     setFormData,
     name,setName,amount,setAmount,expenseList,setExpenseList,handleExpenseChange,handleExpenseSubmit,
     handleClear,
-    handleDelete
+    handleDelete,
+    handleEdit,
+    handleInputEnter
   }
 
   return (
