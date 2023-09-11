@@ -1,0 +1,38 @@
+.category-info .expense{
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    box-shadow: var(--box-shadow-4);
+    margin-bottom: 2px;
+}
+.category-info .expense:hover{
+   background-color: var(--primary-theme-5);
+}
+.expense .info{
+    padding: 8px 5px ;
+}
+.expense button{
+    border: none;
+    cursor: pointer;
+}
+.expense-icons{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.expense button i{
+    font-size: 1.4rem;
+    margin: 0 10px;
+}
+.expense .bx-edit-alt{
+    color: var(--green-1);
+}
+.expense .bx-trash{
+    color: var(--red-1);
+}
+.expense p{
+    font-size: 1.1rem;
+}
+.expense .expense-name p{
+    font-weight: 500;
+    font-size: 1.2rem;
+}

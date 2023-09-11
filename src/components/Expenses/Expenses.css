@@ -1,0 +1,28 @@
+.expenses .header{
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+.expenses .all{
+    width: 95%;
+    margin: 0 auto ;
+    max-width: 1350px;
+}
+.expenses .categories{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    background: var(--secondary-theme-2b);
+    /* border-radius: 10px; */
+}
+.expenses .categories .category{
+    padding: 5px  ;
+    font-size: 1.1rem;
+    /* border-radius: 10px; */
+    background: var(--secondary-theme-2b);
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    color: white;
+}
+/* .expenses .categories .category:nth-child(1),.expenses .categories .category:nth-child(2){
+    border-right: 1px solid rgba(0, 0, 0, 0.507);
+} */
