@@ -3,9 +3,10 @@ import Edit from '../../icons/Edit'
 import Trash from '../../icons/Trash'
 import "./Expense.css"
 import { useBudgetContext } from '../../context/Context'
+
 export default function Expense({name,amount,id}:ExpenseListProps) {
 
-  const {handleDelete}=useBudgetContext()
+  const {handleDelete,handleEdit}=useBudgetContext()
 
   return (
     <div className='expense'>
@@ -17,7 +18,7 @@ export default function Expense({name,amount,id}:ExpenseListProps) {
       </div>
       <div className="info expense-icons">
         <div className="edit">
-          <button>
+          <button onClick={()=>handleEdit(id)}>
             <Edit />       
           </button>
         </div>

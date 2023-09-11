@@ -15,22 +15,11 @@ export default function Budget() {
       name,
       amount,
       expenseList,
-      handleClear
+      handleClear,
+      handleInputEnter
     }=useBudgetContext()
 
     const amountInputRef=useRef(null)
-
-  
-    function handleInputEnter(e: KeyboardEvent<HTMLInputElement> 
-      ,ref: React.RefObject<HTMLInputElement | null>){ 
-      if(e.key==="Enter"){
-        e.preventDefault();
-       if(ref.current){
-        ref.current.focus()
-      //*Changes to the next input box on clicking "enter"
-       }   
-      }
-    }
 
 
   return (
@@ -75,6 +64,8 @@ export default function Budget() {
               <input type="number"
                 id="number"
                 required
+                min="0"
+                step={"0.01"}
                 placeholder="e.g. $50"
                 value={amount}
                 ref={amountInputRef}
