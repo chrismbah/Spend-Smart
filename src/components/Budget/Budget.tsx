@@ -3,13 +3,20 @@ import { useBudgetContext } from '../../context/Context'
 import "./Budget.css"
 import Trash from "../../icons/Trash"
 import Add from "../../icons/Add"
-import Expenses from '../Expenses'
+import Expenses from '../Expenses/Expenses'
 
 export default function Budget() {
 
     const budgetName=localStorage.getItem("budget-name")
     const budgetAmount=localStorage.getItem("budget-amount")
-    const {handleExpenseChange,handleExpenseSubmit,name,amount,expenseList}=useBudgetContext()
+    const {
+      handleExpenseChange,
+      handleExpenseSubmit,
+      name,
+      amount,
+      expenseList,
+      handleClear
+    }=useBudgetContext()
 
     const amountInputRef=useRef(null)
 
@@ -44,7 +51,7 @@ export default function Budget() {
           <div className="progress-bar"></div>
         </div>
         <div className="clear-btn">
-          <button className="btn clear">Clear <Trash /></button>
+          <button className="btn clear" onClick={handleClear}>Clear <Trash /></button>
         </div>
       </div>
       <div className="overview new-expense">
