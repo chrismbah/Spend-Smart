@@ -8,7 +8,7 @@ export interface FormDataProps{
     amount:number|string;
 }
 export interface ExpenseListProps{
+    id:string
     name:string
     amount:number|string
-    id:string
 }
