@@ -22,13 +22,18 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   const [edit,setEdit]=useState<boolean>(false)
   const [editId,setEditId]=useState<number|string>(0)
 
+  const budgetAmount=localStorage.getItem("budget-amount")
+  const total=expenseList.reduce((total:number,current:ExpenseListProps)=>{
+    return (total+=Number(current.amount))
+  },0)
+
   function handleInputEnter(e: KeyboardEvent<HTMLInputElement> 
     ,ref: React.RefObject<HTMLInputElement | null>){ 
     if(e.key==="Enter"){
       e.preventDefault();
      if(ref.current){
       ref.current.focus()
-    //*Changes to the next input box on clicking "enter"
+     //*Changes to the next input box on clicking "enter"
      }   
     }
   }
@@ -44,26 +49,27 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   }
   function handleExpenseSubmit(e:FormEvent):void{
     e.preventDefault();
-    if(edit){
-     let updatedExpenseList:ExpenseListProps[]= expenseList.map((expense)=>{
-        return expense.id === editId ? {...expense,name:name,amount:amount} : expense
-      })
-      setExpenseList(updatedExpenseList)
-      setEdit(false)
-      setName("")
-      setAmount("")
+      if(edit){
+        const updatedExpenseList:ExpenseListProps[]= expenseList.map((expense)=>{
+           return expense.id === editId ? {...expense,name:name,amount:amount} : expense
+         })
+         setExpenseList(updatedExpenseList)
+         setEdit(false)
+         setName("")
+         setAmount("")
+       }
+      else{ 
+       const newExpense={
+         name:name,
+         amount:amount,
+         id:uuid(),
+       }
+       setExpenseList([...expenseList,newExpense])
+       setName("")
+       setAmount("")
+      }
     }
-   else{ 
-    const newExpense={
-      name:name,
-      amount:amount,
-      id:uuid(),
-    }
-    setExpenseList([...expenseList,newExpense])
-    setName("")
-    setAmount("")
-   }
-  }
+   
 
   function handleClear(){
     setExpenseList([])
@@ -100,7 +106,9 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
     handleClear,
     handleDelete,
     handleEdit,
-    handleInputEnter
+    handleInputEnter,
+    total,
+    budgetAmount
   }
 
   return (
