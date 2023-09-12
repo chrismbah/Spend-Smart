@@ -1,4 +1,4 @@
-import {useRef,KeyboardEvent} from 'react'
+import {useEffect, useRef} from 'react'
 import { useBudgetContext } from '../../context/Context'
 import "./Budget.css"
 import Trash from "../../icons/Trash"
@@ -16,11 +16,17 @@ export default function Budget() {
       amount,
       expenseList,
       handleClear,
-      handleInputEnter
+      handleInputEnter,
+      total
     }=useBudgetContext()
 
     const amountInputRef=useRef(null)
+    const difference=Number(budgetAmount)-total
+    const percentageAmount=(total/Number(budgetAmount))*100
 
+    useEffect(()=>{
+      if(difference<=0) alert(`Budget exceeded by $${difference.toLocaleString()}`)
+    },[difference])
 
   return (
     <div className="budget">
@@ -37,7 +43,11 @@ export default function Budget() {
           </div>
         </div>
         <div className="progress">
-          <div className="progress-bar"></div>
+          <div className="progress-bar" style={{width:`${percentageAmount<=100?percentageAmount:100}%`}}></div>
+        </div>
+        <div className="progress-info">
+          <p>${total.toLocaleString()} spent</p>
+          <p>${difference.toLocaleString()} remaining</p>
         </div>
         <div className="clear-btn">
           <button className="btn clear" onClick={handleClear}>Clear <Trash /></button>
@@ -64,7 +74,7 @@ export default function Budget() {
               <input type="number"
                 id="number"
                 required
-                min="0"
+                min="1"
                 step={"0.01"}
                 placeholder="e.g. $50"
                 value={amount}
