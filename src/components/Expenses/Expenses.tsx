@@ -4,12 +4,16 @@ import { ExpenseListProps, } from '../../interface/Interfaces'
 import "./Expenses.css"
 
 export default function Expenses() {
-    const {expenseList}=useBudgetContext()
+    const {expenseList,total}=useBudgetContext()
+   
 
   return (
     <div className='expenses'>
-      <div className="header">Your Expenses</div>
-        <div className="all">
+      <div className="all">
+        <div className="flex">
+         <div className="header">Your Expenses</div>
+          <div className="total">Total: ${total.toLocaleString()}</div>
+        </div>
           <div className="categories">
             <div className="category expense">Expense</div>
             <div className="category amount">Amount</div>
