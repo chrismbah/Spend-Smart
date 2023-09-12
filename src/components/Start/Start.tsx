@@ -48,9 +48,8 @@ export default function Start() {
     }
 
     function handleSubmit(e:FormEvent){
-      e.preventDefault()
-      navigate("/budget") //*Navigates to budget component
-      
+        e.preventDefault()
+        navigate("/budget") //*Navigates to budget component
     }
    
   return (
@@ -86,6 +85,7 @@ export default function Start() {
               name="amount"
               placeholder="e.g. $500"
               required
+              min="1"
               title="Budget Amount"
               value={getStoredValue("budget-amount")}
               onChange={handleChange}
