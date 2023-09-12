@@ -10,24 +10,16 @@
     text-transform: capitalize;
     font-weight: 550;
     margin-bottom: 10px;
-    /* text-decoration: underline;
-    text-decoration-color: var(--secondary-theme-2);
-    text-underline-offset:5px ; */
 }
 .budget .overview-title{
+    width: 95%;
+    margin: 0 auto ;
     font-size: 2rem;
     text-transform: capitalize;
     font-weight: 550;
     margin-bottom: 10px;
 }
-/* .overview-title:after{
-    display: block;
-    content: "";
-    background: var(--secondary-theme-2);
-    height: 4px;
-    width: 260px;
-    border-radius: 2px;
-} */
+
 .budget .overview-title span{
     color: var(--secondary-theme-2);
 }
@@ -37,6 +29,25 @@
     border-radius: 10px;
     width: 95%;
     margin: 0 auto 10px;
+}
+.overview .progress{
+    background: rgba(128, 128, 128, 0.5);
+    height: 13px;
+    border-radius: 7px;
+    width: 100%;
+    margin: 5px 0 3px;
+}
+.overview .progress .progress-bar{
+    background: var(--secondary-theme-2);
+    height: 13px;
+    border-radius: 7px;
+    /* width: 50%; */
+    margin: 5px 0 3px;
+}
+.overview .progress-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .overview .overview-info{
