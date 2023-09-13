@@ -104,11 +104,10 @@
     justify-content: space-between;
     gap: 30px;
     margin-bottom: 10px;
-}
-.new-expense .info {
     font-size:1.15rem ;
     font-weight: 420;
 }
+
 .new-expense .info label{
     display: block;
     margin-bottom: 5px;
@@ -194,6 +193,14 @@
     }
     .new-expense .info input{
         font-size: .8rem;
+        width: 250px;
+    }
+    .new-expense .info{
+        flex-direction: column;
+        justify-content: start;
+    }
+    .new-expense .info .name,.new-expense .info .amount{
+        width: 100%;
     }
  
 }
@@ -203,5 +210,9 @@
     }
     .new-expense .info input::placeholder{
         font-size: .7rem;
+    }
+    .new-expense .info input{
+        font-size: .8rem;
+        width: 80%;
     }
 }
