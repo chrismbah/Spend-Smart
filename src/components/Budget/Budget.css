@@ -206,12 +206,8 @@
     .new-expense .add {
       text-align: left;
     }
- 
 }
 @media screen and (max-width:400px){
-    /* .new-expense .info label{
-        font-size: .8rem;
-    } */
     .new-expense .info input::placeholder{
         font-size: .7rem;
     }
