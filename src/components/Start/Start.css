@@ -4,14 +4,12 @@
     max-width: 1350px;
     margin-top: 50px;
     padding-left: 5px;
-
 }
 .start-header{
     margin-bottom: 25px;
 }
 .start .start-title{
     font-size: 2rem; 
-
 }
 .start-p p{
     letter-spacing: 1px;
@@ -21,7 +19,7 @@
     font-family: "Bricolage Grotesque",sans-serif;
 }
 .start-box{
-    width: 50%;
+    width: 600px;
     box-shadow: var(--box-shadow-4);
     padding: 20px 10px 25px 10px;
     border-radius: 10px;
@@ -29,7 +27,7 @@
 }
 .start-box h3{
     margin-bottom: 25px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background: var(--primary-theme-1);
 }
 .start-box h3::after{
@@ -78,7 +76,7 @@
 .start-box .create-btn{
     background: var(--secondary-theme-4);
     color: var(--primary-theme-5);
-    padding:7px;
+    padding:10px;
     border: none;
     border-radius: 7px;
     font-size: 1.2rem;
@@ -88,8 +86,7 @@
 }
 .start-box .create-btn i{
     background: none;
-    color: var(--primary-theme-4);
-    color: black;
+    color: var(--primary-theme-5);
     vertical-align: middle;
     padding-bottom:2px;
     font-size: 1.4rem;
@@ -97,4 +94,17 @@
 }
 .start-box .create-btn:hover{
     background-color: var(--secondary-theme-2);
+}
+@media screen and (max-width:880px) {
+    .start-box{
+        width: 90%;
+    }  
+    .start-box input{
+        width: 80%;
+    } 
+}
+@media screen and (max-width:540px) {
+    .start .start-title{
+        font-size: 1.8rem; 
+    }
 }

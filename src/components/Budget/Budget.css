@@ -3,7 +3,6 @@
     margin: 0 auto ;
     max-width: 1350px;
     margin-top: 30px;
-    /* padding-left: 10px; */
 }
 .budget .overview-title{
     font-size: 2rem;
@@ -31,41 +30,36 @@
     margin: 0 auto 10px;
 }
 .overview .progress{
-    background: rgba(128, 128, 128, 0.5);
+    background: var(--black-theme-2a);
     height: 13px;
     border-radius: 7px;
     width: 100%;
     margin: 5px 0 3px;
 }
 .overview .progress .progress-bar{
+    transition:var(--transition-1) ;
     background: var(--secondary-theme-2);
     height: 13px;
     border-radius: 7px;
-    /* width: 50%; */
     margin: 5px 0 3px;
 }
 .overview .progress-info{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .overview .overview-info{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 480;
-    font-family: "Bricolage Grotesque";
 }
-.overview-info .name{
-    font-family: "Bricolage Grotesque";
+.overview-info {
     font-size: 1.8rem;
-}
-.overview-info .amount{
-    font-family: "Bricolage Grotesque";
-    font-size: 1.5rem;
     font-weight: 600;
 }
+
 .overview .clear-btn{
     text-align: center;
 }
@@ -108,6 +102,8 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 10px;
 }
 .new-expense .info {
     font-size:1.15rem ;
@@ -117,18 +113,19 @@
     display: block;
     margin-bottom: 5px;
     font-size: 1.12rem;
+    font-weight: 450;
 
 }
 .new-expense .info input{
-    width: 250px;
+    width: 260px;
     border-radius:5px ;
     padding:  3px;
     border: none;
     font-size: 1.02rem;
-    outline: 2px solid black;
+    outline: 2.5px solid var(--black-theme-2);
 }
 .new-expense .info input:focus{
-    outline: 2px solid var(--secondary-theme-2);
+    outline: 2.5px solid var(--secondary-theme-2);
 }
 .new-expense .add {
     text-align: center;
@@ -144,10 +141,11 @@
 }
 
 .new-expense .add-btn i{
-    transition: var(--transition-1);
-    background: none;
-    font-size: 1.1rem;
     color: var(--secondary-theme-2);
+    transition: var(--transition-1);
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-bottom: 4px;
 }
 .new-expense .add-btn:hover{
     background: var(--secondary-theme-2);
@@ -155,4 +153,53 @@
 }
 .new-expense .add-btn:hover i{
     color: var(--primary-theme-2);
+}
+@media screen and (max-width:700px) {
+    .budget{
+        width: 95%;
+        margin-top: 0px;
+    }
+    .new-expense .info input{
+        width: 100%;
+    }  
+    .budget .overview-title{
+        font-size: 1.7rem;
+    } 
+    .overview-info {
+        font-size: 1.6rem;
+    }
+    .overview .btn{
+        font-size: .9rem;
+        padding: 2px 0;
+    }
+    .new-expense .add-btn {
+        font-size: .9rem;
+        padding: 2px 0;
+    }
+    .overview .clear-btn i{
+        transition: var(--transition-1);
+        font-size: 1rem;
+        padding-bottom: 4px;
+    }
+    .new-expense .add-btn i{
+        font-size: 1rem;
+    }
+    .overview .progress-info{
+        font-size: .85rem;
+    }
+    .new-expense .info label{
+        font-size: 1rem;
+    }
+    .new-expense .info input{
+        font-size: .8rem;
+    }
+ 
+}
+@media screen and (max-width:400px){
+    .new-expense .info label{
+        font-size: .8rem;
+    }
+    .new-expense .info input::placeholder{
+        font-size: .7rem;
+    }
 }

@@ -11,7 +11,7 @@ export default function Expense({name,amount,id}:ExpenseListProps) {
   return (
     <div className='expense'>
       <div className="info expense-name">
-       <p> {name}</p>
+       <p>{name}</p>
       </div>
       <div className="info expense-amount">
        <p>${amount}</p> 

@@ -2,14 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 5%;
+    padding: 5% 0 15px;
     width: 85%;
     margin: 0 auto ;
     max-width: 1350px;
   
 }
 .header-img img {
-    width:400px ;
+    width:450px ;
 }
 
 .header-1 h1{
@@ -73,4 +73,52 @@
 .error p{
     font-size: .7rem;
     color: red;
+}
+@media screen and (max-width:1055px) {
+    .header-1 .wisely{
+        margin-bottom: 5px;
+    }
+    .header-1 .thrive{
+        margin-bottom: 15px;
+    }
+    .header-title p{
+        margin-bottom: 10px;
+    }
+    .header-title .box{
+        margin-bottom: 20px;
+    }   
+}
+@media screen and (max-width:840px) {
+    .home{
+        flex-direction: column-reverse;
+    }
+    .header-1 h1{
+        font-size: 2.8rem;
+    }
+    .header-1 .wisely{
+        margin-bottom: 0;
+    }
+    .header-1 .thrive{
+        margin-bottom: 5px;
+    }
+    .header-title p{
+        margin-bottom: 8px;
+    }
+    .header-title .box{
+        margin-bottom: 15px;
+    }   
+}
+@media screen and (max-width:450px) {
+    .home{
+        width: 90%;
+    }
+    .header-img img {
+        width:320px ;
+    }
+    .header-1 h1{
+        font-size: 2.5rem;
+    } 
+    .header-title p{
+        font-size: .8rem;
+    }  
 }

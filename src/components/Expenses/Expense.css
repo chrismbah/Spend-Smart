@@ -8,7 +8,7 @@
    background-color: var(--primary-theme-5);
 }
 .expense .info{
-    padding: 8px 5px ;
+    padding:  5px ;
 }
 .expense button{
     border: none;
@@ -21,7 +21,6 @@
 }
 .expense button i{
     font-size: 1.4rem;
-    margin: 0 10px;
 }
 .expense .bx-edit-alt{
     color: var(--green-1);
@@ -35,4 +34,18 @@
 .expense .expense-name p{
     font-weight: 500;
     font-size: 1.2rem;
+}
+@media screen and (max-width:500px) {
+    .category-info .expense{
+        grid-template-columns: 35% 35% 30%;
+    }   
+    .expense .expense-name p,.expense .expense-amount p{
+        font-size: .9rem;
+    }
+    .expense button i{
+        font-size: 1.1rem;
+    }
+    .expense .info{
+        padding:  5px ;
+    }
 }
