@@ -103,7 +103,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size:1.15rem ;
     font-weight: 420;
 }
@@ -197,17 +197,21 @@
     }
     .new-expense .info{
         flex-direction: column;
-        justify-content: start;
+        margin-bottom: 15px;
     }
     .new-expense .info .name,.new-expense .info .amount{
         width: 100%;
     }
+    
+    .new-expense .add {
+      text-align: left;
+    }
  
 }
 @media screen and (max-width:400px){
-    .new-expense .info label{
+    /* .new-expense .info label{
         font-size: .8rem;
-    }
+    } */
     .new-expense .info input::placeholder{
         font-size: .7rem;
     }
