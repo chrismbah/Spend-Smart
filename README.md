@@ -9,6 +9,6 @@ Spend-Smart is a web-based expense tracker application built with React, Vite, T
 
 ## Demo
 
-You can access a live demo of Spend-Smart [here](link-to-demo).
+You can access a live demo of Spend-Smart [here](https://spend-smart-nine.vercel.app).
 
 
