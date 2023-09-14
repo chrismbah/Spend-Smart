@@ -26,6 +26,13 @@
     .nav{
         width: 95%;
     }
+    .logo img{
+        width:50px;
+    }
+    .nav .link{
+        margin-top: 10px;
+        font-size: 2.1rem;
+    }
 }
 @media screen and (max-width:535px) {
     .logo .name {

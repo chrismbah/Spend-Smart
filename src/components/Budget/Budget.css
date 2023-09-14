@@ -123,6 +123,7 @@
     font-size: 1.02rem;
     outline: 2.5px solid var(--black-theme-2);
 }
+
 .new-expense .info input:focus{
     outline: 2.5px solid var(--secondary-theme-2);
 }
@@ -160,9 +161,6 @@
         width: 95%;
         margin-top: 0px;
     }
-    .new-expense .info input{
-        width: 100%;
-    }  
     .budget .overview-title{
         font-size: 1.7rem;
     } 
@@ -192,8 +190,12 @@
         font-size: 1rem;
     }
     .new-expense .info input{
-        font-size: .8rem;
+        font-size: .9rem;
         width: 250px;
+        height: 30px;
+    }
+    .new-expense .info input::placeholder{
+        font-size: 1rem;
     }
     .new-expense .info{
         flex-direction: column;
@@ -209,7 +211,7 @@
 }
 @media screen and (max-width:400px){
     .new-expense .info input::placeholder{
-        font-size: .7rem;
+        font-size: .8rem;
     }
     .new-expense .info input{
         font-size: .8rem;
