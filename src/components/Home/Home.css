@@ -63,7 +63,7 @@
     letter-spacing: .5px;
 }
 .header-title .start-btn i{
-    color: var(--black-theme-2);
+    color: var(--primary-theme-2);
     background: none;
     font-size: 1.05rem;
 }
