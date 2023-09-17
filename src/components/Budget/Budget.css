@@ -63,32 +63,31 @@
 .overview .clear-btn{
     text-align: center;
 }
-.overview .btn{
+.overview .clear{
     transition: var(--transition-1);
-    width: 100px;
+    width: 120px;
     font-size: 1.1rem;
     border-radius: 10px;
     border: 2px solid var(--red-1);
     cursor: pointer;
-    color: var(--black-theme-2);
     padding: 3px 0;
-    font-weight: 400;
+    background-color: var(--red-1);
+    color: var(--primary-theme-2);
 }
 .overview .clear-btn i{
     transition: var(--transition-1);
-    color: var(--red-1);
     font-size: 1.2rem;
     vertical-align: middle;
     padding-bottom: 5px;
     background: none;
+    color: white;
 }
 .overview .clear-btn button:hover{
-    background-color: var(--red-1);
-    color: var(--primary-theme-2);
+    background-color: white;
+    color: var(--red-1);
 }
 .overview .clear-btn button:hover i{
-    color: var(--black-theme-2);
-    color: var(--primary-theme-2);
+    color: var(--red-1);
 }
 .new-expense .title{
     font-size: 1.35rem;
@@ -132,16 +131,18 @@
 }
 .new-expense .add-btn {
     transition: var(--transition-1);
-    width: 100px;
+    width: 120px;
     padding: 4px 0;
     font-size: 1.1rem;
     border-radius: 10px;
     border: 2px solid var(--secondary-theme-2);
     cursor: pointer;
+    background: var(--secondary-theme-2);
+    color: var(--primary-theme-2);
 }
 
 .new-expense .add-btn i{
-    color: var(--secondary-theme-2);
+    color: var(--primary-theme-2);
     transition: var(--transition-1);
     font-size: 1.2rem;
     vertical-align: middle;
@@ -150,12 +151,38 @@
 
 }
 .new-expense .add-btn:hover{
-    background: var(--secondary-theme-2);
-    color: var(--primary-theme-2);
+    background: white;
+    color: var(--secondary-theme-2);
 }
 .new-expense .add-btn:hover i{
+    color: var(--secondary-theme-2);
+}
+
+/**************Dark Theme***************/
+
+.App-dark .overview-box{
+    box-shadow: var(--box-shadow-6);
+}
+.App-dark .new-expense{
+    box-shadow: var(--box-shadow-6);
+}
+.App-dark .overview .clear-btn button:hover{
+    background:var(--black-theme-4);
+}
+.App-dark .new-expense .add-btn:hover{
+    background: var(--black-theme-4);
+}
+.App-dark .new-expense .info input{
+    background: var(--black-theme-4);
+    outline: 2px solid var(--primary-theme-2);
     color: var(--primary-theme-2);
 }
+.App-dark .new-expense .info input:focus{
+    outline: 2.5px solid var(--secondary-theme-2);
+}
+
+/*************Responsiveness**************/
+
 @media screen and (max-width:700px) {
     .budget{
         width: 95%;

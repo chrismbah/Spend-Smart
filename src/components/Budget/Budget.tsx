@@ -50,7 +50,7 @@ export default function Budget() {
           <p>${difference.toLocaleString()} remaining</p>
         </div>
         <div className="clear-btn">
-          <button className="btn clear" onClick={handleClear}>Clear <Trash /></button>
+          <button className="clear" onClick={handleClear}>Clear <Trash /></button>
         </div>
       </div>
       <div className="overview new-expense">

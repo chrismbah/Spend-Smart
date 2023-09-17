@@ -20,9 +20,7 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 40% 40% 20%;
-    /* background: var(--secondary-theme-2b); */
     background: var(--secondary-theme-2);
-    /* border-radius: 10px; */
 }
 .expenses .categories .category{
     padding: 5px  ;

@@ -32,12 +32,6 @@ export default function Home() {
     setUsername(fullName) //*Sets username as initial full name
     setErrorMsg("") 
   }
-  
-  // useEffect(() => {
-  //    if(inputRef.current){
-  //     inputRef.current.focus()  //*Focuses on input box when page initially renders
-  //    }
-  // }, []);
   return (
     <div className="home">
       <div className="header-title">
@@ -53,7 +47,6 @@ export default function Home() {
             <input type="text" placeholder="Enter name here..." 
             value={userName} 
             className="name-box"
-            // ref={inputRef}
              onChange={handleChange}/>
              <div className="error">
               <p>{errorMsg}</p>

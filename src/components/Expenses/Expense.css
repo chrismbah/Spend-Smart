@@ -5,7 +5,7 @@
     margin-bottom: 2px;
 }
 .category-info .expense:hover{
-   background-color: var(--primary-theme-5);
+   background-color: var(--primary-theme-3 );
 }
 .expense .info{
     padding:  5px ;
@@ -18,6 +18,9 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
+}
+.expense button{
+    background: none;
 }
 .expense button i{
     font-size: 1.4rem;
@@ -35,6 +38,12 @@
     font-weight: 500;
     font-size: 1.2rem;
 }
+/*********************** Dark Theme *******************/
+
+.App-dark .category-info .expense:hover{
+    background-color: var(--black-theme-2a);
+ }
+
 @media screen and (max-width:500px) {
     .category-info .expense{
         grid-template-columns: 35% 35% 30%;
