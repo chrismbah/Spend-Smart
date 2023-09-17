@@ -4,11 +4,13 @@ import Home from './components/Home/Home'
 import Navbar from './components/Navbar/Navbar'
 import Start from './components/Start/Start'
 import Budget from './components/Budget/Budget'
+import { useBudgetContext } from './context/Context'
 
 function App() {
-
+  const {lightMode}=useBudgetContext()
+  
   return (
-    <div className='App'>
+    <div className={`App ${ lightMode ?"":"App-dark"}`}>
        <Router>
         <Navbar />
         <Routes>

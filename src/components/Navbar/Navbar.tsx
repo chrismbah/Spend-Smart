@@ -1,9 +1,13 @@
 import logo from "../../assets/logo.svg"
 import "./Nav.css"
-import {Link} from "react-router-dom"
 import Moon from "../../icons/Moon"
+import Sun from "../../icons/Sun"
+import { useBudgetContext } from "../../context/Context"
 
 export default function Navbar() {
+
+  const {lightMode,setLightMode}=useBudgetContext()
+
   return (
     <div className='nav'>
         <div className="logo">
@@ -14,10 +18,8 @@ export default function Navbar() {
             <h2>SpendSmart</h2>
           </div>
         </div>
-        <div className="link">
-          <Link to={"https://github.com/chrismbah/Spend-Smart"}>
-            <Moon />
-          </Link>
+        <div className="theme" onClick={()=>setLightMode(!lightMode)}>
+            {lightMode?<Moon />:<Sun/>}
         </div>
     </div>
   )

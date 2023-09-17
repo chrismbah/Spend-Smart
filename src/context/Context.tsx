@@ -9,7 +9,8 @@ export function useBudgetContext(){   //*Function for getting data from context 
 }
 
 export default function BudgetProvider({children}:BudgetProviderProps) {
-  
+
+  const[lightMode,setLightMode]=useState<boolean>(false)
   const [userName,setUsername]=useState<string>("")
   const [firstname,setFirstname]=useState<string>("")
   const [formData,setFormData]=useState<FormDataProps>({
@@ -96,6 +97,8 @@ export default function BudgetProvider({children}:BudgetProviderProps) {
   }
 
   const contextValue:any={
+    lightMode,
+    setLightMode,
     userName,
     setUsername,
     firstname,
