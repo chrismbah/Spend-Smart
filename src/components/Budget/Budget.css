@@ -117,9 +117,9 @@
 .new-expense .info input{
     width: 260px;
     border-radius:5px ;
-    padding:  3px;
+    padding:  6px 4px 2px;
     border: none;
-    font-size: 1.02rem;
+    font-size: 1.07rem;
     outline: 2.5px solid var(--black-theme-2);
 }
 
@@ -217,9 +217,10 @@
         font-size: 1rem;
     }
     .new-expense .info input{
-        font-size: .9rem;
+        font-size: 1rem;
         width: 250px;
-        height: 30px;
+        /* padding:6px 4px 2px ; */
+        height: 33px;
     }
     .new-expense .info input::placeholder{
         font-size: 1rem;
@@ -232,7 +233,7 @@
         width: 100%;
     }
     .new-expense .info .amount{
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     
     .new-expense .add {
@@ -241,10 +242,10 @@
 }
 @media screen and (max-width:400px){
     .new-expense .info input::placeholder{
-        font-size: .8rem;
+        font-size: .9rem;
     }
     .new-expense .info input{
-        font-size: .8rem;
+        font-size: .9rem;
         width: 80%;
     }
 }
