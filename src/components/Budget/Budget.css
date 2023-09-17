@@ -219,7 +219,6 @@
     .new-expense .info input{
         font-size: 1rem;
         width: 250px;
-        /* padding:6px 4px 2px ; */
         height: 33px;
     }
     .new-expense .info input::placeholder{
