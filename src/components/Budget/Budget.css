@@ -201,7 +201,7 @@
     .new-expense .add-btn {
         font-size: .9rem;
         padding: 2px 0;
-    }
+    } 
     .overview .clear-btn i{
         transition: var(--transition-1);
         font-size: 1rem;
@@ -230,6 +230,9 @@
     }
     .new-expense .info .name,.new-expense .info .amount{
         width: 100%;
+    }
+    .new-expense .info .amount{
+        margin-bottom: 10px;
     }
     
     .new-expense .add {
